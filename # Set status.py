@@ -1,5 +1,5 @@
 # Set status
-light_states = {'red', 'yellow', 'green'}
+light_states = {'disconnected', 'connectedd', 'on', 'off', 'red', 'yellow', 'green'}
 init_state = 'disconnected'
 final_state = 'green'
 
