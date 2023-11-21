@@ -8,7 +8,9 @@ transitions = {
     ('disconnected', '0'): 'disconnected',
     ('disconnected', '1'): 'connected',
     ('connected', '0'): 'connected',
-    ('connected', '1'): 'on',
+    ('connected', '1'): 'off',
+    ('off', '0'): 'off',
+    ('off', '1'): 'on',
     ('on', '0'): 'on',
     ('on', '1'): 'red',
     ('red', '0'): 'red',
@@ -41,7 +43,4 @@ if result == final_state:
 else:
     print("The string is rejected")
 
-    print("The string is accepted")
-else:
-    print("The string is rejected")
 
