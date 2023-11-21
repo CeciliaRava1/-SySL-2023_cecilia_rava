@@ -1,10 +1,16 @@
 # Set status
 light_states = {'red', 'yellow', 'green'}
-init_state = 'red'
+init_state = 'disconnected'
 final_state = 'green'
 
 # Definition of transitions
 transitions = {
+    ('disconnected', '0'): 'disconnected',
+    ('disconnected', '1'): 'connected',
+    ('connected', '0'): 'connected',
+    ('connected', '1'): 'on',
+    ('on', '0'): 'on',
+    ('on', '1'): 'red',
     ('red', '0'): 'red',
     ('red', '1'): 'yellow',
     ('yellow', '0'): 'yellow',
@@ -31,6 +37,10 @@ def value_string(string):
 result = value_string(string)
 
 if result == final_state:
+    print("The string is accepted")
+else:
+    print("The string is rejected")
+
     print("The string is accepted")
 else:
     print("The string is rejected")
